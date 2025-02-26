@@ -1,0 +1,20 @@
+<launch>
+    <!-- Launch the SBG EllipseD driver -->
+    <include file="$(find sbg_driver)/launch/examples/sbg_ellipseD.launch"/>
+
+    <!-- Launch the RealSense camera with the specified parameters -->
+    <include file="$(find realsense2_camera)/launch/rs_aligned_depth.launch">
+        <arg name="enable_pointcloud" value="true"/>
+        <arg name="enable_sync" value="true"/>
+        <arg name="align_depth" value="true"/>
+        <arg name="enable_infra1" value="true"/>
+        <arg name="enable_infra2" value="true"/>
+        <arg name="depth_width" value="1280"/>
+        <arg name="depth_height" value="720"/>
+        <arg name="color_width" value="1280"/>
+        <arg name="color_height" value="720"/>
+        <arg name="infra_width" value="1280"/>
+        <arg name="infra_height" value="720"/>
+    </include>
+
+</launch>
